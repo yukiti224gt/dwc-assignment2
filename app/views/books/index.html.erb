@@ -1,13 +1,12 @@
 <% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
+  <p class="notice"><%= flash[:notice] %></p>
 <% end %>
-<h1>Books</h1>
+<h1 class="title">Books</h1>
 <table>
-  <tr>
-    <td>Title</td>
-    <td>Body</td>
+  <tr class="table-title">
+    <td><strong>Title</strong></td>
+    <td><strong>Body</strong></td>  
   </tr>
-  
     <% @books.each do |b| %>
       <tr>
         <td><%= b.title %></td>
@@ -20,19 +19,24 @@
   
 </table>
 
-<h1>New book</h1>
+<h2 class="title">New book</h1>
+
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this book from being saved:
-  <%= @book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
+  <%= @book.errors.count %> errors prohibited this book from being saved:
+  <ul class="error-message">
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <%= form_with model:@book, local:true do |f| %>
-  <h4>Title</h4>
+  <p>Title</p>
   <%= f.text_field:title %>
-  <h4>Body</h4>
+  <p>Body</p>
   <%= f.text_area:body %>
+  <div>
+    <%= f.submit "Create Book" %>  
+  </div>
   
-  <%= f.submit "Create Book" %>
 <% end %>

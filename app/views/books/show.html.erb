@@ -1,10 +1,11 @@
-<% if [:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %> 
-<h4>Title:</h4>
-<%= @book.title %>
-<h4>Body:</h4>
-<%= @book.body %>
+<div class="text-box">
+  <% if [:notice] %>
+    <p class="text-contain notice"><%= flash[:notice] %></p>
+  <% end %> 
+  <p class="text-contain"><strong>Title: </strong><%= @book.title %></p>
+  
+  <p class="text-contain"><strong >Body: </strong><%= @book.body %></p>
+</div>
 
 <%= link_to "Edit", edit_book_path %> | 
 <%= link_to "Back", books_path %>

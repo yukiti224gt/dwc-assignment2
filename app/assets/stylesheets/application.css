@@ -27,3 +27,46 @@
 a {
   color: black;
 }
+a:hover {
+  color: white;
+  background-color: black;   
+}
+
+
+td {
+  padding-right: 20px;
+}
+
+.start-box {
+  margin-left: 40px;
+  line-height: 70px;
+}
+
+
+.title {
+  margin: 20px 0;
+}
+
+.table-title {
+  text-align: center;
+}
+
+.error-message {
+  margin: 20px ;
+}
+
+.text-box {
+  margin-left: 40px;
+}
+
+.text-contain {
+  margin-bottom: 20px;
+}
+
+.form {
+  margin-bottom: 10px;
+}
+
+.notice {
+  color: rgb(121,188,121)
+}
